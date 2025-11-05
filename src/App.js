@@ -8,6 +8,7 @@ import React, { useState, useRef, useEffect} from 'react';
 
 function App() {
     const [clicked, setClicked] = useState(false);
+    const [clickedYes, setClickedYes] = useState(false);
     const [position, setPosition] = useState({top: 200, left: 200});
     const [dodgeActive, setDodgeActive] = useState(false);
     const bgm = useRef(new Audio(backgroundMusic));
@@ -79,92 +80,103 @@ function App() {
                         i'm ready {'<'}3
                     </button>
                     </>
+                ) : !clickedYes ? (
+                        <>
+                            <img
+                                src={photobooth}
+                                alt="top left"
+                                className="absolute top-6 left-4 w-30 h-30 -rotate-12 object-contain"    
+                            >
+                            </img>
+                            <img
+                                src={pbStrip}
+                                alt="top left1"
+                                className="absolute top-8 left-20 w-16 h-16 -rotate-6 object-contain"    
+                            >
+                            </img>
+
+                            <img
+                                src={rolife}
+                                alt="top right"
+                                className="absolute top-2 right-4 w-32 h-32 rotate-12 object-contain"    
+                            >
+                            </img>
+
+                            <p className='text-blue-900 font-bold text-sm text-center'>
+                                ‿︵‿︵︵‿︵‿୨♡୧‿︵‿︵‿︵‿︵
+                                <br />
+                                NOW PLAYING : Kiss Kiss Shy Shy
+                                <br />
+                                1:06 ───ㅇ───── 2:57
+                                <br />
+                                ↻  ◁  II  ▷  ↺
+                                <br />
+                                ‿︵‿︵︵‿︵‿୨♡୧‿︵‿︵‿︵‿︵
+                            </p>
+                            <div className='grid grid-cols-3 gap-8 mt-auto mb-auto mr-auto ml-auto'>
+                                <div>
+                                    <p className='text-white font-bold text-xl text-left underline'>
+                                        itinerary:
+                                    </p>
+                                    <ul className='custom-bullet list-inside text-white ml-2'>
+                                        <li> life4cuts</li>
+                                        <li> rolife kit</li>
+                                        <li> food</li>
+                                        <li> then we build (˵ •̀ᴗ•́˵)و</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p className='text-white font-bold text-xl text-left underline'>
+                                        location & time:
+                                    </p>
+                                    <p className='text-white text-auto text-left'>
+                                        westfield valley fair mall
+                                        <br />
+                                        leave @ 5:30 p.m - 6:00 p.m
+                                    </p>
+                                </div>
+                                <div>
+                                    <p className='text-white font-bold text-xl text-left underline'>
+                                        attire:
+                                    </p>
+                                    <p className='text-white text-md text-left'>
+                                        something nice, same vibes as emporium cuz photobooth so i want us to look cutesy ˶ᵔ ᵕ ᵔ˶
+                                    </p>
+                                </div>
+                                
+                            </div>
+                            
+                            <p className='text-white font-medium text-xl text-center'> do you accept? ( •̯́ ^ •̯̀)♡</p>
+
+                            
+                            <div className='flex justify-center gap-4 mt-4'>
+                                <button 
+                                    onClick={() => {console.log("yes button clicked"); setClickedYes(true);}}
+                                    className='bg-plum-web text-white font-bold py-2 px-4 rounded-lg border-2 border-white object-center w-32'
+                                >
+                                yes {'( ˶ˆᗜˆ˵ )'}
+                                </button>
+                                
+                                <button 
+                                    onClick={() => console.log("no button clicked")}
+                                    onMouseMove={handleMouseMove}
+                                    className='bg-plum-web text-white font-bold py-2 px-4 rounded-lg border-2 border-white object-center w-32'
+                                >
+                                    no {'(˙◠˙)'}
+                                </button>
+                            </div>
+                            
+                        </>
                 ) : (
                     <>
-                        <img
-                            src={photobooth}
-                            alt="top left"
-                            className="absolute top-6 left-4 w-30 h-30 -rotate-12 object-contain"    
-                        >
-                        </img>
-                        <img
-                            src={pbStrip}
-                            alt="top left1"
-                            className="absolute top-8 left-20 w-16 h-16 -rotate-6 object-contain"    
-                        >
-                        </img>
-
-                        <img
-                            src={rolife}
-                            alt="top right"
-                            className="absolute top-2 right-4 w-32 h-32 rotate-12 object-contain"    
-                        >
-                        </img>
-
-                        <p className='text-blue-900 font-bold text-sm text-center'>
-                            ‿︵‿︵︵‿︵‿୨♡୧‿︵‿︵‿︵‿︵
-                            <br />
-                            NOW PLAYING : Kiss Kiss Shy Shy
-                            <br />
-                            1:06 ───ㅇ───── 2:57
-                            <br />
-                            ↻  ◁  II  ▷  ↺
-                            <br />
-                            ‿︵‿︵︵‿︵‿୨♡୧‿︵‿︵‿︵‿︵
+                        <p className='text-white font-medium text-6xl text-center pt-32'> 
+                            Yay ♡⸜(˶˃ ᵕ ˂˶)⸝♡
                         </p>
-                        <div className='grid grid-cols-3 gap-8 mt-auto mb-auto mr-auto ml-auto'>
-                            <div>
-                                <p className='text-white font-bold text-xl text-left underline'>
-                                    itinerary:
-                                </p>
-                                <ul className='custom-bullet list-inside text-white ml-2'>
-                                    <li> life4cuts</li>
-                                    <li> rolife kit</li>
-                                    <li> food</li>
-                                    <li> then we build (˵ •̀ᴗ•́˵)و</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <p className='text-white font-bold text-xl text-left underline'>
-                                    location & time:
-                                </p>
-                                <p className='text-white text-auto text-left'>
-                                    westfield valley fair mall
-                                    <br />
-                                    leave @ 5:30 p.m - 6:00 p.m
-                                </p>
-                            </div>
-                            <div>
-                                <p className='text-white font-bold text-xl text-left underline'>
-                                    attire:
-                                </p>
-                                <p className='text-white text-md text-left'>
-                                    something nice, same vibes as emporium cuz photobooth so i want us to look cutesy ˶ᵔ ᵕ ᵔ˶
-                                </p>
-                            </div>
-                            
-                        </div>
-                        
-                        <p className='text-white font-medium text-xl text-center'> do you accept? ( •̯́ ^ •̯̀)♡</p>
-
-                        
-                        <div className='flex justify-center gap-4 mt-4'>
-                            <button 
-                                onClick={() => console.log("yes button clicked")}
-                                className='bg-plum-web text-white font-bold py-2 px-4 rounded-lg border-2 border-white object-center w-32'
-                            >
-                               yes {'( ˶ˆᗜˆ˵ )'}
-                            </button>
-                            
-                            <button 
-                                onClick={() => console.log("no button clicked")}
-                                onMouseMove={handleMouseMove}
-                                className='bg-plum-web text-white font-bold py-2 px-4 rounded-lg border-2 border-white object-center w-32'
-                            >
-                                no {'(˙◠˙)'}
-                            </button>
-                        </div>
-                        
+                        <p className='text-white font-medium text-xl text-center pb-6'>
+                            now pls text 'rainbow cats are farting poop' to notify me that you 
+                            have clicked yes bc idk how to implement some auto texting thing
+                            nor do i care enough to learn
+                        </p>
                     </>
                 )}
                 
