@@ -17,12 +17,10 @@ function App() {
     const start = () => {
         bgm.current.loop = true;
         bgm.current.play();
+
+        setTimeout(() => setDodgeActive(true), 5000);
     }
 
-    useEffect(() => {
-        const timer = setTimeout(() => setDodgeActive(true), 3000);
-        return () => clearTimeout(timer);
-    }, []);
 
     useEffect(() => {
         const handleMouseMove = (e) => {
@@ -94,7 +92,7 @@ function App() {
                     <br />
                     <button 
                         onClick={() => {setClicked(true); start();}}
-                        className='bg-plum-web text-white font-bold py-2 px-4 rounded-lg border-2 border-white'
+                        className='bg-plum-web text-white font-bold py-2 px-4 rounded-lg border-2 border-white mb-16'
                     >
                         i'm ready {'<'}3
                     </button>
